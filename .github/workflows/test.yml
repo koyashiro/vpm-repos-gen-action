@@ -24,5 +24,8 @@ jobs:
           id: "net.koyashiro.vpm"
           url: "https://vpm.koyashiro.net/repos.json"
           author: "koyashiro"
-          repos: "koyashiro/udon-list,koyashiro/udon-dictionary,koyashiro/udon-json"
+          repos: |
+            koyashiro/udon-list
+            koyashiro/udon-dictionary
+            koyashiro/udon-json
           output: "repos.json"
