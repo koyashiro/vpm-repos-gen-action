@@ -17,7 +17,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Generate repos.json
-        uses: koyashiro/vpm-repos-gen-action@v1
+        uses: koyashiro/vpm-repos-gen-action@v0.1.0
         with:
           name: koyashiro
           id: net.koyashiro.vpm

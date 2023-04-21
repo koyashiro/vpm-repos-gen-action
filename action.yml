@@ -1,6 +1,9 @@
 name: "vpm-repos-gen action"
 description: "Generate vpm package list."
 author: "koyashiro"
+branding:
+  icon: "box"
+  color: "blue"
 inputs:
   version:
     description: "vpm-repos-gen version."
