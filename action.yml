@@ -17,8 +17,8 @@ inputs:
   author:
     description: "`author` field of vpm package list."
     required: false
-  packages:
-    description: "`author` field of vpm package list."
+  repos:
+    description: "repositories for the package."
     required: false
   output:
     description: "output path."
@@ -40,13 +40,6 @@ runs:
         ID: ${{ inputs.id }}
         URL: ${{ inputs.url }}
         AUTHOR: ${{ inputs.author }}
-        PACKAGES: ${{ inputs.packages }}
-      run: |
-        vpm-repos-gen \
-          --name "${NAME}" \
-          --id "${ID}" \
-          --url "${URL}" \
-          --author "${AUTHOR}" \
-          --packages "${PACKAGES}" \
-          | tee "${OUTPUT}" \
-          | /dev/null
+        REPOS: ${{ inputs.repos }}
+        OUTPUT: ${{ inputs.output }}
+      run: ${{ github.action_path }}/generate.sh
