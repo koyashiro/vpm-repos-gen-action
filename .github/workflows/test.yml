@@ -28,4 +28,15 @@ jobs:
             koyashiro/udon-list
             koyashiro/udon-dictionary
             koyashiro/udon-json
-          output: "repos.json"
+          output: "-"
+
+      - name: Test(v1.5.0)
+        uses: ./
+        with:
+          version: "1.5.0"
+          name: "koyashiro"
+          id: "net.koyashiro.vpm"
+          url: "https://vpm.koyashiro.net/repos.json"
+          author: "koyashiro"
+          repos: koyashiro/udon-list,koyashiro/udon-dictionary,koyashiro/udon-json
+          output: "-"
