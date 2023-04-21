@@ -1,0 +1,52 @@
+name: "vpm-repos-gen action"
+description: "Generate vpm package list."
+author: "koyashiro"
+inputs:
+  version:
+    description: "vpm-repos-gen version"
+    required: false
+  name:
+    description: "`name` field of vpm package list."
+    required: false
+  id:
+    description: "`id` field of vpm package list."
+    required: false
+  url:
+    description: "`url` field of vpm package list."
+    required: false
+  author:
+    description: "`author` field of vpm package list."
+    required: false
+  packages:
+    description: "`author` field of vpm package list."
+    required: false
+  output:
+    description: "output path."
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Install vpm-repos-gen
+      shell: bash
+      env:
+        VERSION: ${{ inputs.version }}
+      run: ${{ github.action_path }}/install.sh
+
+    - name: Generate vpm package list
+      shell: bash
+      env:
+        NAME: ${{ inputs.name }}
+        ID: ${{ inputs.id }}
+        URL: ${{ inputs.url }}
+        AUTHOR: ${{ inputs.author }}
+        PACKAGES: ${{ inputs.packages }}
+      run: |
+        vpm-repos-gen \
+          --name "${NAME}" \
+          --id "${ID}" \
+          --url "${URL}" \
+          --author "${AUTHOR}" \
+          --packages "${PACKAGES}" \
+          | tee "${OUTPUT}" \
+          | /dev/null
