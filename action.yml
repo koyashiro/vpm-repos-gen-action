@@ -3,26 +3,33 @@ description: "Generate vpm package list."
 author: "koyashiro"
 inputs:
   version:
-    description: "vpm-repos-gen version"
+    description: "vpm-repos-gen version."
     required: false
+    default: "latest"
   name:
     description: "`name` field of vpm package list."
     required: false
+    default: ""
   id:
     description: "`id` field of vpm package list."
     required: false
+    default: ""
   url:
     description: "`url` field of vpm package list."
     required: false
+    default: ""
   author:
     description: "`author` field of vpm package list."
     required: false
+    default: ""
   repos:
     description: "repositories for the package."
     required: false
+    default: ""
   output:
-    description: "output path."
+    description: "output path of vpm package list."
     required: true
+    default: "repos.json"
 
 runs:
   using: "composite"
