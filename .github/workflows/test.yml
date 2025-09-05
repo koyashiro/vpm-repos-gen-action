@@ -18,12 +18,10 @@ jobs:
         with:
           output: "repos.json"
 
-      - name: Test(v2.1.0)
+      - name: Test(v2.1.1)
         uses: ./
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          version: "2.1.0"
+          version: "2.1.1"
           name: "koyashiro"
           id: "net.koyashiro.vpm"
           url: "https://vpm.koyashiro.net/repos.json"
@@ -34,15 +32,14 @@ jobs:
             koyashiro/udon-json
           output: "-"
 
-      - name: Test(v2.1.0)
+      - name: Test(v2.1.1)
         uses: ./
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          version: "2.1.0"
+          version: "2.1.1"
           name: "koyashiro"
           id: "net.koyashiro.vpm"
           url: "https://vpm.koyashiro.net/repos.json"
           author: "koyashiro"
           repos: koyashiro/udon-list,koyashiro/udon-dictionary,koyashiro/udon-json
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           output: "-"
