@@ -17,7 +17,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
       - name: Generate repos.json
-        uses: koyashiro/vpm-repos-gen-action@v0.1.0
+        uses: koyashiro/vpm-repos-gen-action@v0.2.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
