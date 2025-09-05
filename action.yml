@@ -29,6 +29,10 @@ inputs:
     description: "repositories for the package."
     required: false
     default: ""
+  github_token:
+    description: "GitHub API token."
+    required: false
+    default: ""
   output:
     description: "output path of vpm package list."
     required: true
@@ -51,5 +55,6 @@ runs:
         URL: ${{ inputs.url }}
         AUTHOR: ${{ inputs.author }}
         REPOS: ${{ inputs.repos }}
+        GITHUB_TOKEN: ${{ inputs.github_token }}
         OUTPUT: ${{ inputs.output }}
       run: ${{ github.action_path }}/generate.sh
