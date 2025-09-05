@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
       - name: Generate repos.json
         uses: koyashiro/vpm-repos-gen-action@v0.1.0
         with:
