@@ -18,10 +18,10 @@ jobs:
         with:
           output: "repos.json"
 
-      - name: Test(v2.1.1)
+      - name: Test(v2.2.0)
         uses: ./
         with:
-          version: "2.1.1"
+          version: "2.2.0"
           name: "koyashiro"
           id: "net.koyashiro.vpm"
           url: "https://vpm.koyashiro.net/repos.json"
@@ -32,10 +32,10 @@ jobs:
             koyashiro/udon-json
           output: "-"
 
-      - name: Test(v2.1.1)
+      - name: Test(v2.2.0)
         uses: ./
         with:
-          version: "2.1.1"
+          version: "2.2.0"
           name: "koyashiro"
           id: "net.koyashiro.vpm"
           url: "https://vpm.koyashiro.net/repos.json"
